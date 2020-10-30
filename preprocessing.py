@@ -147,4 +147,4 @@ def process_data(dirpath, img_size, n_slices, segment=True):
     else:
         for patient in patients:
             data.append(image_processing(patient, n_slices, img_size))
-    return np.array(data)
+    return np.expand_dims(np.array(data), axis=4)
